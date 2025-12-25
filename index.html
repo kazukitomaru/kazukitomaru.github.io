@@ -24,7 +24,7 @@
             --font-size-lg: 1.8rem;
             --font-size-xl: 2.5rem;
 
-            --max-width: 720px;
+            --max-width: 780px;
         }
 
         * {
@@ -68,18 +68,24 @@
 
         a {
             color: var(--color-link);
-            text-decoration: none;
-            border-bottom: 1px solid var(--color-link);
+            text-decoration: underline;
+            text-decoration-color: var(--color-link);
+            text-underline-offset: 0.1em;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.9;
         }
 
         .link--plain {
             color: var(--color-text-primary);
-            border-bottom: none;
+            text-decoration: none;
         }
 
         .link--nav {
             color: var(--color-text-secondary);
-            border-bottom: none;
+            text-decoration: none;
             transition: color 0.2s;
         }
 
@@ -157,7 +163,7 @@
 
         .profile__photo img {
             display: block;
-            max-width: 180px;
+            max-width: 200px;
         }
 
         .publications__links {
@@ -170,7 +176,7 @@
         .education__footnote {
             margin-top: var(--spacing-sm);
             font-size: 0.8rem;
-            opacity: 0.7;
+            color: var(--color-text-secondary);
         }
 
         footer {
@@ -184,6 +190,11 @@
         }
 
         @media (max-width: 600px) {
+            main {
+                padding-top: var(--spacing-md);
+                padding-bottom: var(--spacing-md);
+            }
+
             .header__inner {
                 flex-direction: column;
                 align-items: flex-start;
@@ -210,6 +221,11 @@
                 max-width: 240px;
                 width: 100%;
             }
+
+            footer {
+                padding-top: var(--spacing-md);
+                padding-bottom: var(--spacing-md);
+            }
         }
     </style>
 </head>
@@ -220,7 +236,7 @@
             <div class="header__logo">
                 <a href="https://kazukitomaru.com" class="link--plain">kazukitomaru.com</a>
             </div>
-            <nav class="header__nav" aria-label="Main navigation">
+            <nav class="header__nav">
                 <a href="#research" class="link--nav">Research</a>
                 <a href="#publications" class="link--nav">Publications</a>
                 <a href="#contact" class="link--nav">Contact</a>
@@ -245,7 +261,7 @@
                 </div>
             </div>
 
-            <p><strong>Research interests:</strong> Galaxy formation and evolution, Cosmological hydrodynamic
+            <p><b>Research interests:</b> Galaxy formation and evolution, Cosmological hydrodynamic
                 simulations, Dwarf galaxies, Internal dynamics and kinematics of galaxies, Baryon cycle</p>
 
             <p>Hi! I'm Kazuki Tomaru (Japanese: 戸丸 一樹), a Ph.D. student in the <a
